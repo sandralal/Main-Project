@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("connect.php");
+
 $username=$_SESSION['username'];
 $petid=$_GET['petid'];
 echo $petid;

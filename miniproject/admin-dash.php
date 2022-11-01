@@ -50,7 +50,7 @@ $adopc=mysqli_fetch_array($adopcount);
             <div class="userimg"> 
             <img src="don.png">
             
-            <a href="#"><span>Income </span></a>
+            <a href="income.php"><span>Income </span></a>
             </div>
             <div class="userimg"> 
             <img src="vol.png">

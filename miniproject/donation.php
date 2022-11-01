@@ -26,15 +26,19 @@
 <body>
     <?php
     session_start();
+    include("connect.php");
     $username=$_SESSION['username'];
     include "header.php";
     if(isset($_POST['submit']))
     {
         $userid=$_SESSION['userid'];
-        
-  $phn=$_POST['number'];
-  $address=$_POST['address'];
-  $petname=$_POST['pet_name'];
+        $amount=$_POST['amount'];
+        $cardname=$_POST['card'];
+        $exp=$_POST['exp'];
+        $sql="insert into donation values('$userid','$amount','$exp','$cardname')";
+        $res=mysqli_query($conn,$sql);
+
+
     }
     ?>
 
@@ -75,11 +79,11 @@
                     <input class="input-field" type="number"   placeholder="Enter CV number"  required>
                     <p class="h">Expiry Date</p>
                     <p class="sub-h">Enter the Expiry Date on the card </p>
-                    <input class="input-field" type="text"  placeholder="Enter Expiry Date">
+                    <input class="input-field" type="text" name='exp' placeholder="Enter Expiry Date">
                     <p class="h">Card Holder Name</p>
-                    <input class="input-field" type="text"  placeholder="Card Holder Name" required><br>
+                    <input class="input-field" type="text" name='card' placeholder="Card Holder Name" required><br>
                     <p class="h">Amount</p>
-                    <input class="input-field" type="text" placeholder="Enter Amount" required><br>
+                    <input class="input-field" type="text"name='amount' placeholder="Enter Amount" required><br>
                     <input class="btn" type="submit" name="submit"value="Donate" >
 
 
