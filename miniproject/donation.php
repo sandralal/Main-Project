@@ -25,8 +25,19 @@
 </head>
 <body>
     <?php
+    session_start();
+    $username=$_SESSION['username'];
     include "header.php";
+    if(isset($_POST['submit']))
+    {
+        $userid=$_SESSION['userid'];
+        
+  $phn=$_POST['number'];
+  $address=$_POST['address'];
+  $petname=$_POST['pet_name'];
+    }
     ?>
+
 
     <!-- <header>
     
@@ -55,7 +66,7 @@
             
             <div class="donate">
                 <h1 style="text-align: center;margin:0;font-family: 'Josefin Sans', sans-serif;margin-top: 1rem;">  Donation Payment Details</h1>
-                <form action="" method="POST">
+                <form method="POST">
                     <p class="h" style="margin-top:2rem">Card Number</p>
                     <p class="sub-h">Enter the 16-digit card number on the card </p>
                     <input class="input-field" type="number"  placeholder="0000 0000 0000 0000" required>
@@ -69,7 +80,7 @@
                     <input class="input-field" type="text"  placeholder="Card Holder Name" required><br>
                     <p class="h">Amount</p>
                     <input class="input-field" type="text" placeholder="Enter Amount" required><br>
-                    <input class="btn" type="submit" value="Donate" >
+                    <input class="btn" type="submit" name="submit"value="Donate" >
 
 
                 <!-- <br>

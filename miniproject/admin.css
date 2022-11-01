@@ -9,10 +9,20 @@
         
         
 }
+h1{
+    color: white;
+}
+.sitting{
+      
+    background-color: #1d6a63;
+       
+    justify-content: center;
+    align-items: center;
+}
 table{
-   
+   background-color: #fff;
     border-collapse:collapse;
-    width : 75%;
+    width : 50%;
 }
 table th{
     color:black;
@@ -21,7 +31,7 @@ table th{
 table td{
     color:black;
 font-size: 1.2em;
-padding: 10px 10px;
+padding: 10px 5px;
 text-align: center;
 }
 
