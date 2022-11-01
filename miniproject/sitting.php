@@ -17,21 +17,33 @@ $username=$_SESSION['username'];
    
     <?php include('header.php')?>;
     <div class="maindiv">
-        <div class="sub1">
-    <div class="text">
-<span>
-    "The Best Home Pet Sitting Services in our City!! From few hours of Sitting to Days!! Our Sitters are there for your pets!!"</span><br><br>
+          <div class="sub1">
+              <div class="text">
+                  <span>"The Best Home Pet Sitting Services in our City!! From few hours of Sitting to Days!! 
+                  Our Sitters are there for your pets!!"  </span><br><br>
         
-        <span style='color:black';>Discover Affordable Home Pet Sitting services for your furry friend with a caring pet sitter in your neighborhood!</span>
-   <br><br> <input type="button"  onclick="location.href='sitting_form.php?userid=<?php echo $userid?>';" value="Click For Registration" >  
-    </div>
-</div>
+                  <span style='color:black';>Discover Affordable Home Pet Sitting services for your furry 
+                  friend with a caring pet sitter in your neighborhood!</span>
+                  <br><br> 
+                  <input type="button"  onclick="location.href='sitting_form.php?userid=<?php echo $userid?>';" value="Click For Registration" >  
+              </div>
+        </div>
         <div class="sub2">
 
 
-       </div>
+        </div>
 
     </div>
+
+
+
+
+
+
+
+
+
+    
     <section id="petting">
         <h2>Parents Away? We'll stay and play!</h2>
         <pre>    Are you stuck at work? Dinner plans? Catch a movie? We got your back! Get frequent updates, pictures and videos of your pet 
