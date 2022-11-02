@@ -16,10 +16,37 @@ if(isset($_POST['submit'])){
   $sex=$_POST['sex'];
   $diet=$_POST['diet'];
   $payment=$_POST['payment'];
+  if($payment=="1-day"){
+                    
+    //echo"<script> alert('{$curuser}')</script>";
+    $price="100";
+}
+elseif($payment=="2-day"){
+    //echo"<script> alert('{$curuser}')</script>";
+    $price="200";
+}
+elseif($payment=="3-day"){
+    //echo"<script> alert('{$curuser}')</script>";
+    $price="300";
+}
+elseif($payment=="4-day"){
+    //echo"<script> alert('{$curuser}')</script>";
+    $price="400";
+}
+elseif($payment=="5-day"){
+    //echo"<script> alert('{$curuser}')</script>";
+    
+    $price="500";
+}
+else{
+    echo"error";
+}
+
+
 
   
   
-  $sql = "INSERT INTO pet_sitting(name,number,address,pet_name,pets,breed,sex,diet,payment,userid) value ('$usname','$phn','$address','$petname','$pet','$breed','$sex','$diet','$payment','$userid')";
+  $sql = "INSERT INTO pet_sitting(name,number,address,pet_name,pets,breed,sex,diet,payment,total,userid) value ('$usname','$phn','$address','$petname','$pet','$breed','$sex','$diet','$payment','$price','$userid')";
   $query=mysqli_query($conn,$sql);
   $last_id = mysqli_insert_id($conn);
   $_SESSION['sitid']=$last_id;
@@ -32,7 +59,7 @@ if(!$query){
    echo "not";
 }
 else{
-  header("Location:sitting_billing.php?userid='$userid'");
+  header("Location:pay.php?userid='$userid'");
 }
   
   

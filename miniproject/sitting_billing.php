@@ -16,11 +16,12 @@ include("connect.php");
                 if(!$query){
                   echo "not";
                 }else{
+                  
                       header("pet sitting booked");
                   }
                   
   
-}
+
 
 
 ?>
