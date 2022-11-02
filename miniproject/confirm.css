@@ -1,0 +1,59 @@
+body{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    font-family: arial;
+}
+.card{
+    width: 30rem;
+    height: 30rem;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    border: 10px solid #4caf50;
+    flex-direction: column;
+    margin-top: 114px;
+    text-align: center;
+}
+.card img{
+    height: 100px;
+    width: 100px;
+    margin-top: -135px;
+    margin-left: -1px;
+}
+.success{
+    margin-top: 132px;
+    margin-left: -500px;
+}
+.com{
+    font-weight: 900;
+    color: black;
+    font-size: 30px;
+    margin-left: 29px;
+    margin-top: 53px;
+}
+.sub-com{
+    font-weight: 300;
+    font-size: 25px;
+    color: rgb(36, 34, 34);
+    margin-top: -15px;
+}
+.card a{
+    width: 345px;
+    height: 61px;
+    background: #4caf50;
+    text-decoration: none;
+    display: flex;
+    text-align: center;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-family: arial;
+    font-weight: 600;
+    font-size: 40px;
+    margin-top: 115px;
+}

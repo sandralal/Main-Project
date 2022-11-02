@@ -29,7 +29,7 @@
 
 
    <?php 
-   include('admin-header.html');
+   include('admin-header.php');
    ?> 
 <div class="pet-ins-main">   
 <div class="petins">

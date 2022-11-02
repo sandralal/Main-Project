@@ -5,11 +5,13 @@
 </head>
 <body><h1>PETS IN PAWESOME
 </h1>
+<?php include 'admin-header.php';
+?>
 </body>
     </html>
     <?php
 include("connect.php");
-$sql="select * from pet_details inner JOIN sign_up on pet_details.userid=sign_up.userid;";
+$sql="select * from pet_details  JOIN sign_up on pet_details.userid=sign_up.userid";
 $res=mysqli_query($conn,$sql);
  
 while($row=mysqli_fetch_assoc($res))

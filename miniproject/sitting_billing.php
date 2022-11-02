@@ -4,38 +4,6 @@ $sitid=$_SESSION['sitid'];
 $userid=$_GET['userid'];
 $price=NULL;
 include("connect.php");
-if(isset($_POST['btn']))
-{
- 
-//getting total amount from pet sitting table
-                  $sql="select payment from pet_sitting where sitting_id='$sitid'";
-                  $res=mysqli_query($conn,$sql);
-                  $row=mysqli_fetch_assoc($res);
-                  if($row['payment']=="1-day"){
-                    echo"hii";
-                      //echo"<script> alert('{$curuser}')</script>";
-                      $price="6 $";
-                  }
-                  elseif($row['payment']=="2-day"){
-                      //echo"<script> alert('{$curuser}')</script>";
-                      $price="12 $";
-                  }
-                  elseif($row['payment']=="3-day"){
-                      //echo"<script> alert('{$curuser}')</script>";
-                      $price="18 $";
-                  }
-                  elseif($row['payment']=="4-day"){
-                      //echo"<script> alert('{$curuser}')</script>";
-                      $price="24 $";
-                  }
-                  elseif($row['payment']=="5-day"){
-                      //echo"<script> alert('{$curuser}')</script>";
-                      
-                      $price="30 $";
-                  }
-                  else{
-                      echo"error";
-                  }
 //inserting billing details
                   $name=$_POST['fname'];
                   $email=$_POST['email'];

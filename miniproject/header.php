@@ -5,6 +5,24 @@ $username=$_SESSION['username'];
     <head>
     <link rel="stylesheet"
     href="header.css">
+    <script>
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+       window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+             var dropdowns = document.getElementsByClassName("dropdown-content");
+             var i;
+             for (i = 0; i < dropdowns.length; i++) {
+                 var openDropdown = dropdowns[i];
+                 if (openDropdown.classList.contains('show')) {
+                     openDropdown.classList.remove('show');
+                   }
+               }
+           }
+       }
+    </script>
 
 </head>
     <body>
@@ -21,7 +39,13 @@ $username=$_SESSION['username'];
         <div class="logo-profile">
             <div class="userimg">
                <a href="#1234"><img src="admin.png"></a>
-               <a href="#"><?php echo$username;?></a>
+               <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn" ><?php echo$username;?></button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="signout.php">Sign Out</a>
+                    
+                      </div>
+                   </div>
               </div>
           </div>  
     </header>
