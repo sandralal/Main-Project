@@ -38,7 +38,7 @@ href="style-home.css">
     <img class="img-div" src="./homepage.jpg">
     <h3 class="textMessages">Helpers improve their world</h3>
     <div class="donate-button">
-        <a href="./donation.html"><b>DONATE</b></a>
+        <a href="donation.php"><b>DONATE</b></a>
         
     </div>
     
