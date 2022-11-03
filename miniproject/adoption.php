@@ -3,7 +3,7 @@
 session_start();
 include("connect.php");
 $username=$_SESSION['username'];
-$userid=$_GET['userid'];
+//$userid=$_GET['userid'];
 $sql="select * from pet_details";
 $res=mysqli_query($conn,$sql);
 ?>

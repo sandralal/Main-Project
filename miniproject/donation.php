@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./donation-style.css">
+    <title>donationpage</title>
+    <link rel="stylesheet" href="donation-style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +29,7 @@
     include("connect.php");
     $username=$_SESSION['username'];
     include "header.php";
+
     if(isset($_POST['submit']))
     {
         $userid=$_SESSION['userid'];
@@ -62,6 +63,14 @@
         </div>
        
     </header>   -->
+    <style>
+        header{
+            top:-20px;
+        }
+        .userimg img{
+            margin-top:-10px;
+        }
+        </style>
     <div class="main">
         <div class="container">
             <!-- <div class="desc">
