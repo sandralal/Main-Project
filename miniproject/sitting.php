@@ -17,8 +17,9 @@ $username=$_SESSION['username'];
    
     <?php include('header.php')?>;
     <div class="maindiv">
-          <div class="sub1">
-              <div class="text">
+          
+        <div class="sub2">
+        <div class="text">
                   <span>"The Best Home Pet Sitting Services in our City!! From few hours of Sitting to Days!! 
                   Our Sitters are there for your pets!!"  </span><br><br>
         
@@ -27,8 +28,6 @@ $username=$_SESSION['username'];
                   <br><br> 
                   <input type="button"  onclick="location.href='sitting_form.php?userid=<?php echo $userid?>';" value="Click For Registration" >  
               </div>
-        </div>
-        <div class="sub2">
 
 
         </div>
