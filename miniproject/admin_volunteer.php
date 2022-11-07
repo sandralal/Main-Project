@@ -6,7 +6,7 @@ $res=mysqli_query($conn,$sql);
 if(isset($_GET['id']))
 {// echo"<script>confirm('Do you want to delete the volunteer details permanently?')</script>";
     $id=$_GET['id'];
-    $del=mysqli_query($conn,"delete from volunteer_table where voID='$id'");
+    $del=mysqli_query($conn,"delete from volunteer_tbl where voID='$id'");
 }
 ?>
 <html> 

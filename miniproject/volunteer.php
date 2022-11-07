@@ -27,13 +27,11 @@ if(isset($_POST['submit'])){
     }
     if(empty($city)){
         $cityerror="Please enter the city";
-    }elseif (!preg_match("/^([a-zA-Z' ]+)$/",$city)){
+    }if (!preg_match("/^([a-zA-Z' ]+)$/",$city)){
         $cityerror="city name should not contain any special characters";
     }
         
-     if(!preg_match("/^([a-zA-Z' ]+)$/",$dist)){
-        $disterror="state name should not contain any special characters";
-    }
+    
 
     
        if(empty($state))

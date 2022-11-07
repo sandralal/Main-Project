@@ -5,7 +5,7 @@ $userid=$_GET['userid'];
 
 //echo"<script> alert('{$curuser}')</script>";
 if(isset($_POST['submit'])){
-
+$nameerror=$phnerror=$add=$petError=$petBreed=NULL;
 
   $usname=$_POST['name'];
   $phn=$_POST['number'];
@@ -41,11 +41,24 @@ elseif($payment=="5-day"){
 else{
     echo"error";
 }
+if(!preg_match("/^([a-zA-Z' ]+)$/",$usname)){
+  $nameerror="Name contains alphabets only";
+}
+if(!preg_match("/^[1-9][0-9]{10}$/",$phn)){
+  $phnerror="Number contains 10 digits only";
+}
+
+if(!preg_match("/^([a-zA-Z' ]+)$/",$petname)){
+  $petError="Name contains alphabets only";
+}
+if(!preg_match("/^([a-zA-Z' ]+)$/",$breed)){
+  $petBreed="Breed contains alphabets only";
+}
 
 
-
-  
-  
+if(!$nameerror &&!$phnerror&&!$petBreed&&!$petError)
+{
+   
   $sql = "INSERT INTO pet_sitting(name,number,address,pet_name,pets,breed,sex,diet,payment,total,userid) value ('$usname','$phn','$address','$petname','$pet','$breed','$sex','$diet','$payment','$price','$userid')";
   $query=mysqli_query($conn,$sql);
   $last_id = mysqli_insert_id($conn);
@@ -61,6 +74,13 @@ if(!$query){
 else{
   header("Location:pay.php?userid='$userid'");
 }
+
+}
+
+
+
+  
+ 
   
   
 }
@@ -78,20 +98,24 @@ else{
         </div>
     <h1>ENTER YOUR INFORMATIONS HERE </h1>
     <form class="sitting-form" action="#" method='POST'>
-        <input type="text" placeholder="Enter Your Name" name="name" id="name"><BR><BR>
-        <input type="text" placeholder="Enter Your Contact Number" name="number" id="number"><BR><BR>
+        <input type="text" placeholder="Enter Your Name"name="name" id="name"><BR><BR>
+        <span style='color:red;font-size:small;'><?php if(isset($usname))echo $nameerror ?>
+        <input type="text" placeholder="Enter Your Contact Number"name="number" id="number"><BR><BR>
+        <span style='color:red;font-size:small;'><?php if(isset($phn))echo $phnerror ?>
       
         <textarea  name="address" placeholder="Enter Your Address" rows="4" cols="50" id="address"></textarea><br><br>
-        <input type="text" placeholder="Enter Your Pet's Name" name="pet_name" id="pet_name"><BR><BR>
+        <input type="text" placeholder="Enter Your Pet's Name"name="pet_name" id="pet_name"><BR><BR>
+        <span style='color:red;font-size:small;'><?php if(isset($pet))echo $petError ?>
         <select name="pets" id="pets">
-    <option value="Select pet" disabled selected>Select pet</option>
-  <option value="dog">DOG</option>
-  <option value="cat">CAT</option>
-  <option value="rabbit">RABBIT</option>
-  <option value="bird">BIRDS</option>
-</select>
-        <br><br>
+                <option value="Select pet" disabled selected>Select pet</option>
+                <option value="dog">DOG</option>
+                <option value="cat">CAT</option>
+                <option value="rabbit">RABBIT</option>
+                <option value="bird">BIRDS</option>
+               </select>
+                      <br><br>
 <input type="text" placeholder="Enter Pet Breed" name="breed" id="breed"><br><br>
+<span style='color:red;font-size:small;'><?php if(isset($breed))echo $petBreed ?>
 <select name="sex" id="sex">
 <option value="Select sex" disabled selected>Select sex</option>
   <option value="female">F</option>

@@ -12,27 +12,29 @@ $username=$_SESSION['username'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pet-sitting</title>
     <link rel="stylesheet" href="pet-sitting.css">
+    <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Lobster">
 </head>
 <body>
    
     <?php include('header.php')?>;
-    <div class="maindiv">
-          
-        <div class="sub2">
-        <div class="text">
-                  <span>"The Best Home Pet Sitting Services in our City!! From few hours of Sitting to Days!! 
-                  Our Sitters are there for your pets!!"  </span><br><br>
+   
+    <div class="sub2">
+    <img src="./img/sittingbg-removebg.png">
+    <div class="text">
+    <span >"The Best Home Pet Sitting Services in our City!! From few hours of Sitting to Days!! 
+                  Our Sitters are there for your pets!!"  <br><br>
         
-                  <span style='color:black';>Discover Affordable Home Pet Sitting services for your furry 
+                  Discover Affordable Home Pet Sitting services for your furry 
                   friend with a caring pet sitter in your neighborhood!</span>
                   <br><br> 
                   <input type="button"  onclick="location.href='sitting_form.php?userid=<?php echo $userid?>';" value="Click For Registration" >  
-              </div>
+          </div>
 
 
         </div>
 
-    </div>
+  
 
 
 
@@ -45,7 +47,7 @@ $username=$_SESSION['username'];
     
     <section id="petting">
         <h2>Parents Away? We'll stay and play!</h2>
-        <pre>    Are you stuck at work? Dinner plans? Catch a movie? We got your back! Get frequent updates, pictures and videos of your pet 
+        <pre>  Are you stuck at work? Dinner plans? Catch a movie? We got your back! Get frequent updates, pictures and videos of your pet 
      being pampered by their new friend! PawSome connects you with your perfect professional dog sitter  or cat sitter, 
                                             whenever and wherever you need</pre>
                                             <h3>How Does Home Pet Sitting Work!</h3>

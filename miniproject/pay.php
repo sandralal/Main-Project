@@ -45,7 +45,7 @@ if(isset($_POST['submit']))
             <div class="cvv">
                 <h3>CVV</h3>
                 <div class="input-field">
-                    <input type="password" value="" pattern="[0-9]{3}"name="cvv" id="cvv" required>
+                    <input type="password" value="" pattern="[0-9]{3}" title="should contain only 3 digits"name="cvv" id="cvv" required>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@ if(isset($_POST['submit']))
             <div class="card-number">
                 <h3>Card Number</h3>
                 <div class="input-field">
-                    <input type="text" value="" pattern="[0-9]{12}"name="cardno" id="cardno" required>
+                    <input type="text" value="" pattern="[0-9]{16}" title="Should contain only 16 digits"name="cardno" id="cardno" required>
                 </div>
             </div>
         </div>
