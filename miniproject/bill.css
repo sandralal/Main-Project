@@ -1,6 +1,7 @@
 body{
     font-family: Arial;
     background: #100c50;
+    width: 100%;
 }
 h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -10,13 +11,15 @@ h2 {
     table{
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 95%;
+   
+    width: 90%;
     border: 1px solid #444;
     }
     td,
     th{
     border: 1px solid #444;
-    padding: 8px;
+   
+    padding-right: 4px;
     text-align: center;
     }
     .left {
@@ -39,6 +42,7 @@ h2 {
         padding-right: 17px;
     }
     .heed span{
+        margin-top: 20px;
         margin-left: 50px;
         line-height: 40px;
         font-family: arial;
@@ -50,7 +54,7 @@ h2 {
         height: 650px;
         width: 1480px;
         background: #fff;
-        margin-left:10px;
+        margin-left:-10px;
         border-radius: 10px;
     }
     .tab{

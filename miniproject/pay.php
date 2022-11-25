@@ -85,9 +85,9 @@ if(isset($_POST['submit']))
                       </select>
                 </div>
                 <div class="cards">
-                    <img src="./images/mc.png" alt="">
-                    <img src="./images/vi.png" alt="">
-                    <img src="./images/pp.png" alt="">
+                    <img src="./img/mc.png" alt="master">
+                    <img src="./img/vi.png" alt="visa">
+                    <img src="./img/pp.png" alt="paypal">
                 </div>
             </div>    
         </div>

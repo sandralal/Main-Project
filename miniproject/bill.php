@@ -19,7 +19,7 @@ $rowbill=mysqli_fetch_assoc($resultbill);
 <body>
 
 <div class="headname">
-<h1>Kwik Wash Laundry Services</h1>
+<h1>PaweSome Pet Rescue </h1>
 <h2>Invoice</h2>
 </div>
 <div class="margin">
@@ -31,7 +31,7 @@ $rowbill=mysqli_fetch_assoc($resultbill);
 </div><br><br>
 <div class="tab">
 
-<table>
+<table cellpadding=6 colspacing=2>
 <thead>
 <tr>
 <th>ID</th>

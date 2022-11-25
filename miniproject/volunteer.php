@@ -5,8 +5,8 @@ $username=$_SESSION['username'];
 $userid=$_SESSION['userid'];
 include("connect.php");
 if(isset($_POST['submit'])){
-    
    
+  
     $dob=$_POST['dob'];
     $time=$_POST['time'];
     $addr=$_POST['address'];
@@ -18,27 +18,22 @@ if(isset($_POST['submit'])){
    $gender=$_POST['gender'];
    
     
-    $doberror=$housenameerror=$cityerror=$pincodeerror=$staterror=$pincodeerror=$gendererror=$experror=$disterror=NULL;
+    $doberror=$housenameerror=$cityerror=$pincodeerror=$staterror=$pincodeerror=$gendererror=$experror=NULL;
     if(empty($dob)){
         $doberror="Please select correct Date of Birth";
     }
     if(empty($addr)){
         $housenameerror="Please enter the address";
     }
-    if(empty($city)){
-        $cityerror="Please enter the city";
-    }if (!preg_match("/^([a-zA-Z' ]+)$/",$city)){
+   
+   
+    if (!preg_match("/^([a-zA-Z' ]+)$/",$city)){
         $cityerror="city name should not contain any special characters";
     }
         
-    
-
-    
-       if(empty($state))
+    if(empty($state))
        {
-        $staterror="Please enter the state";
-    }elseif (!preg_match("/^([a-zA-Z' ]+)$/",$state)){
-        $staterror="state name should not contain any special characters";
+        $staterror="Please choose an option";
     }
 
     if(empty($pincode)){
@@ -52,7 +47,7 @@ if(isset($_POST['submit'])){
     if(empty($exp)){
         $experror="Please select yes if you have experience ";
     }
-    if( !$doberror &&!$housenameerror &&!$cityerror &&!$pincodeerror &&!$staterror &&!$pincodeerror &&!$gendererror &&!$experror &&!$disterror)
+    if( !$doberror &&!$housenameerror &&!$cityerror &&!$pincodeerror &&!$staterror &&!$pincodeerror &&!$gendererror &&!$experror )
     {
 
     
@@ -87,19 +82,19 @@ if(isset($_POST['submit'])){
                      
                     <div class="input-box">
                         <span class="details">Date Of Birth</span>
-                        <input type="date" name="dob" placeholder="Enter your dob"> 
+                        <input type="date" name="dob" placeholder="Enter your dob" required> 
                         <span style='color:red;font-size:small;'><?php if(isset($dob))echo $doberror ?><br></span>
 
                     </div>
                     <div class="input-box">
                         <span class="details">Best time to contact</span>
-                        <input type="text" name="time" placeholder="ex. 5-7pm "> 
+                        <input type="text" name="time" placeholder="ex. 5-7pm "required> 
 
                         
                     </div>
                     <div class="input-box">
                         <span class="details">Address Line 1</span>
-                        <input type="text" name="address" placeholder="Address line"> 
+                        <input type="text" name="address" placeholder="Address line"required> 
                         <span style='color:red;font-size:small;'><?php if(isset($addr))echo $housenameerror ?><br></span>
                     
 
@@ -107,44 +102,66 @@ if(isset($_POST['submit'])){
                     
                     <div class="input-box">
                         <span class="details">State</span>
-                        <input type="text" name="state" placeholder="State "> 
+                       
+                        <select name="state" id="state" required>
+                        <option value="" disabled selected>Select State</option>
+                        <option value="Kerala">Kerala</option>
+</select>
                         <span style='color:red;font-size:small;'><?php if(isset($state))echo $staterror ?><br></span>
                     
 
                     </div>
                     <div class="input-box">
                         <span class="details">District</span>
-                        <input type="text" name="district" placeholder="Enter your District"> 
-                        <span style='color:red;font-size:small;'><?php if(isset($dist))echo $disterror ?><br></span>
+                        <select name="district" id="dist" required>
+                        <option value="" disabled selected>Select District</option>
+                        <option value="Alappuzha">Alappuzha</option>
+                        <option value="Ernakulam">Ernakulam</option>
+                        <option value="Idukki" >Idukki</option>
+                        <option  value="Kannur">Kannur</option>
+                        <option  value="Kasargode">Kasargode</option>
+                        <option value="Kollam">Kollam</option>
+                        <option value="Kottayam">Kottayam</option>
+                        <option value="Kozhikkodu">Kozhikkodu</option>
+                        <option value="Malappuram" >Malappuram</option>
+                        <option  value="Palakkadu">Palakkadu</option>
+                        <option value="Pathanamthitta"  >Pathanamthitta</option>
+                        <option value="Thiruvananthapuram" >Thiruvananthapuram</option>
+                        <option value="Thrissur" >Thrissur</option>
+                        <option value="Wayanadu">Wayanadu</option>
+
+                      </select>
+                 
+
 
                     </div>
                     <div class="input-box">
                         <span class="details">City</span>
-                        <input type="text" name="city" placeholder="Enter your city"> 
+                        <input type="text" name="city" placeholder="Enter your city"required> 
                         <span style='color:red;font-size:small;'><?php if(isset($city))echo $cityerror ?><br></span>
                     </div>
                     <div class="input-box">
                         <span class="details">Pincode</span>
-                        <input type="text" name="pincode" placeholder="Enter your pincode"> 
+                        <input type="text" name="pincode" placeholder="Enter your pincode"required> 
                         <span style='color:red;font-size:small;'><?php if(isset($pincode))echo $pincodeerror?><br></span>
 
                     </div>
                     <div class="gender-det">
                         <span class="category">Previous Experience</span>
-                        <input type="radio" id="yes" name="exp" value="yes">
+                        <input type="radio" value="yes" name="exp" required>
                         <label for="yes">Yes</label><br>
-                        <input type="radio" id="no" name="exp" value="no">
-                        <label for="no">No</label><br>
+                        <input type="radio" value="no" name="exp" >     
+                      <label for="no">No</label><br>
                         <span style='color:red;font-size:small;'><?php if(isset($exp))echo $experror ?><br></span> 
                    </div>
                     <div class="gender-det">
                         <span class="gender-title">Gender</span><br><br>
                         <div class="category">
-                        <input type="radio" id="female" name="gender" value="female">
+                        <input type="radio" id="female"value="female" name="gender" required>
                         <label for="female">Female</label><br>
-                        <input type="radio" id="male" name="gender" value="male">
+                        <input type="radio" id="male" value="male"name="gender" >
                         <label for="male">Male</label><br>
-                        <input type="radio" id="others" name="gender" value="others">
+                        <input type="radio" value="others" name="gender">
                         <label for="others">Others</label><br>
                         <span style='color:red;font-size:small;'><?php if(isset($gender))echo $gendererror ?><br></span>
                     </div>
