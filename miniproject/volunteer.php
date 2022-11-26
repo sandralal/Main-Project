@@ -172,9 +172,11 @@ if(isset($_POST['submit'])){
                         
                     </div>
                     <br>
-                   
+                  <div class="buttonsub">
+                  <button type="submit" name="submit" >SUBMIT NOW</button>  
+                  </div> 
                     
-     <button type="submit" name="submit" >SUBMIT NOW</button>  
+     
 
 
 
