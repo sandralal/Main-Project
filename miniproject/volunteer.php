@@ -80,7 +80,7 @@ if(isset($_POST['submit'])){
     <div class="volImage"><img src="volunteer.jpg"></div>
     <div class="volForm" >        
     <form action="#" method="POST"> 
-        <h1>welcome <?php echo $username;?> </h1>  
+        <h1>Welcome <?php echo $username;?> </h1>  
         <h1>VOLUNTEER REGISTRATION </h1>
         <div class="user">
                      
