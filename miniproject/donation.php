@@ -39,7 +39,7 @@
         $exp=$_POST['exp'];
         $sql="insert into donation values('$userid','$amount','$exp','$cardname')";
         $res=mysqli_query($conn,$sql);
-
+header("Location:bill_donation.php");
 
     }
     ?>
@@ -83,17 +83,17 @@
                 <form method="POST">
                     <p class="h" style="margin-top:2rem">Card Number</p>
                     <p class="sub-h">Enter the 16-digit card number on the card </p>
-                    <input class="input-field" type="number"  placeholder="0000 0000 0000 0000" required>
+                    <input class="input-field" type="text" pattern="[0-9]{16}" oninvalid="setCustomValidity('Please enter 16 digit card number ')" placeholder="0000 0000 0000 0000" required>
                     <p class="h">CV Number</p>
                     <p class="sub-h">Enter the 3-4 digit CV number on the card </p>
-                    <input class="input-field" type="number"   placeholder="Enter CV number"  required>
+                    <input class="input-field" type="text"pattern="[0-9]{3}" oninvalid="setCustomValidity('Please enter 3 digit CVV ')" required>
                     <p class="h">Expiry Date</p>
                     <p class="sub-h">Enter the Expiry Date on the card </p>
                     <input class="input-field" type="text" name='exp' placeholder="Enter Expiry Date">
                     <p class="h">Card Holder Name</p>
-                    <input class="input-field" type="text" name='card' placeholder="Card Holder Name" required><br>
+                    <input class="input-field" type="text" name='card'pattern="^[a-zA-Z ]" title="enter alphabets only"placeholder="Card Holder Name" required><br>
                     <p class="h">Amount</p>
-                    <input class="input-field" type="text"name='amount' placeholder="Enter Amount" required><br>
+                    <input class="input-field" type="text"name='amount' pattern="^[0-9]" oninvalid="setCustomValidity('Please enter valid amount ')" required><br>
                     <input class="btn" type="submit" name="submit"value="Donate" >
 
 
